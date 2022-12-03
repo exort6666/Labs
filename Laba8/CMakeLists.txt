@@ -1,9 +1,13 @@
-﻿# CMakeList.txt: файл проекта CMake верхнего уровня; проведите глобальную конфигурацию
-# и включите сюда подпроекты.
+﻿# CMakeList.txt: проект CMake для Laba8; включите исходный код и определения,
+# укажите здесь логику для конкретного проекта.
 #
 cmake_minimum_required (VERSION 3.8)
 
-project ("Laba8")
+# Добавьте источник в исполняемый файл этого проекта.
+add_executable (Laba8 "Laba8.cpp" "Laba8.h")
 
-# Включите подпроекты.
-add_subdirectory ("Laba8")
+if (CMAKE_VERSION VERSION_GREATER 3.12)
+  set_property(TARGET Laba8 PROPERTY CXX_STANDARD 20)
+endif()
+
+# TODO: Добавьте тесты и целевые объекты, если это необходимо.
