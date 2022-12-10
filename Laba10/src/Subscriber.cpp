@@ -9,3 +9,6 @@ Subscriber::Subscriber(int id, std::string name)
 std::string Subscriber::getName() {
 	return m_name;
 }
+Subscriber::~Subscriber() {
+	std::cout << "Destructor Subscriber" << std::endl;
+}

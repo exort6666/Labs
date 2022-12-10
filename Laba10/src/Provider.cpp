@@ -18,3 +18,9 @@ void Provider::PrintSubscribers()
 		std::cout << m_subscribers[i]->getName() << std::endl;
 	}
 }
+Provider::~Provider() {
+	std::cout << "Destructor Provider" << std::endl;
+	for (size_t i = 0; i < m_subscribers.size(); i++) {
+		delete m_subscribers[i];
+	}
+}
